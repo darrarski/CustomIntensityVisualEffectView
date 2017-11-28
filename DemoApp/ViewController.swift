@@ -49,8 +49,8 @@ class ViewController: UIViewController {
         demoView.firstEffectSegmentedControl.insertSegment(withTitle: "dark", at: 2, animated: false)
         demoView.secondEffectSegmentedControl.insertSegment(withTitle: "regular", at: 0, animated: false)
         demoView.secondEffectSegmentedControl.insertSegment(withTitle: "prominent", at: 1, animated: false)
-        demoView.firstEffectSegmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
-        demoView.secondEffectSegmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
+        demoView.firstEffectSegmentedControl.addTarget(self, action: #selector(effectSegmentedControlValueChanged), for: .valueChanged)
+        demoView.secondEffectSegmentedControl.addTarget(self, action: #selector(effectSegmentedControlValueChanged), for: .valueChanged)
     }
 
     private func setupSliderView() {
@@ -100,7 +100,7 @@ class ViewController: UIViewController {
         effectIntensity = CGFloat(slider.value)
     }
 
-    @objc func segmentedControlValueChanged(_ control: UISegmentedControl) {
+    @objc func effectSegmentedControlValueChanged(_ control: UISegmentedControl) {
         switch (control, control.selectedSegmentIndex) {
         case (demoView.firstEffectSegmentedControl, 0):
             blurEffectStyle = .extraLight
