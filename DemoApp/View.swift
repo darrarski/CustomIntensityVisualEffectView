@@ -19,6 +19,8 @@ class View: UIView {
     let imageView = Subview.imageView
     let visualEffectView = Subview.visualEffectView
     let slider = Subview.slider
+    let firstSegmentedControl = Subview.firstSegmentedControl
+    let secondSegmentedControl = Subview.secondSegmentedControl
 
     private let containerView = UIView(frame: .zero)
 
@@ -26,6 +28,8 @@ class View: UIView {
         addSubview(containerView)
         containerView.addSubview(imageView)
         containerView.addSubview(visualEffectView)
+        addSubview(firstSegmentedControl)
+        addSubview(secondSegmentedControl)
         addSubview(slider)
     }
 
@@ -49,8 +53,18 @@ class View: UIView {
         visualEffectView.rightAnchor.constraint(equalTo: containerView.rightAnchor).isActive = true
         visualEffectView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
 
+        firstSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        firstSegmentedControl.topAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 32).isActive = true
+        firstSegmentedControl.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
+        firstSegmentedControl.rightAnchor.constraint(equalTo: rightAnchor, constant: -16).isActive = true
+
+        secondSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        secondSegmentedControl.topAnchor.constraint(equalTo: firstSegmentedControl.bottomAnchor, constant: 0).isActive = true
+        secondSegmentedControl.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
+        secondSegmentedControl.rightAnchor.constraint(equalTo: rightAnchor, constant: -16).isActive = true
+
         slider.translatesAutoresizingMaskIntoConstraints = false
-        slider.topAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 32).isActive = true
+        slider.topAnchor.constraint(equalTo: secondSegmentedControl.bottomAnchor, constant: 16).isActive = true
         slider.leftAnchor.constraint(equalTo: leftAnchor, constant: 32).isActive = true
         slider.rightAnchor.constraint(equalTo: rightAnchor, constant: -32).isActive = true
         slider.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -32).isActive = true
@@ -68,6 +82,14 @@ private extension View {
 
         static var visualEffectView: CustomIntensityVisualEffectView {
             return CustomIntensityVisualEffectView(effect: nil, intensity: 1)
+        }
+
+        static var firstSegmentedControl: UISegmentedControl {
+            return UISegmentedControl(items: [])
+        }
+
+        static var secondSegmentedControl: UISegmentedControl {
+            return UISegmentedControl(items: [])
         }
 
         static var slider: UISlider {
