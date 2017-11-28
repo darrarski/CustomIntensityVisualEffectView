@@ -23,6 +23,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupContent()
         setupSegmentedControls()
         setupSliderView()
         updateContent()
@@ -43,18 +44,33 @@ class ViewController: UIViewController {
         }
     }
 
-    private var blurEffectStyle: UIBlurEffectStyle? = .dark {
+    private var blurEffectStyle: UIBlurEffectStyle? {
         didSet {
             updateEffectSegmentedControls()
             updateVisualEffect()
         }
     }
 
-    private var effectIntensity: CGFloat = 0.5 {
+    private var effectIntensity: CGFloat = 0 {
         didSet {
             updateSlider()
             updateVisualEffect()
         }
+    }
+
+    private func setupContent() {
+        let text = NSMutableAttributedString()
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.paragraphSpacing = 10
+        text.append(NSAttributedString(string: "CustomIntensityVisualEffectView Demo\n", attributes: [
+            .font: UIFont.preferredFont(forTextStyle: .headline),
+            .paragraphStyle: paragraphStyle
+        ]))
+        text.append(NSAttributedString(string: "Use buttons and slider below to customise look", attributes: [
+            .font: UIFont.preferredFont(forTextStyle: .subheadline),
+            .paragraphStyle: paragraphStyle
+        ]))
+        demoView.textLabel.attributedText = text
     }
 
     private func setupSegmentedControls() {
@@ -79,8 +95,10 @@ class ViewController: UIViewController {
         switch contentStyle {
         case .light:
             demoView.contentView.backgroundColor = .white
+            demoView.textLabel.textColor = .black
         case .dark:
             demoView.contentView.backgroundColor = .black
+            demoView.textLabel.textColor = .white
         }
     }
 
