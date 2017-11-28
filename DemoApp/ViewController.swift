@@ -44,13 +44,13 @@ class ViewController: UIViewController {
     }
 
     private func setupSegmentedControls() {
-        demoView.firstSegmentedControl.insertSegment(withTitle: "extra light", at: 0, animated: false)
-        demoView.firstSegmentedControl.insertSegment(withTitle: "light", at: 1, animated: false)
-        demoView.firstSegmentedControl.insertSegment(withTitle: "dark", at: 2, animated: false)
-        demoView.secondSegmentedControl.insertSegment(withTitle: "regular", at: 0, animated: false)
-        demoView.secondSegmentedControl.insertSegment(withTitle: "prominent", at: 1, animated: false)
-        demoView.firstSegmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
-        demoView.secondSegmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
+        demoView.firstEffectSegmentedControl.insertSegment(withTitle: "extra light", at: 0, animated: false)
+        demoView.firstEffectSegmentedControl.insertSegment(withTitle: "light", at: 1, animated: false)
+        demoView.firstEffectSegmentedControl.insertSegment(withTitle: "dark", at: 2, animated: false)
+        demoView.secondEffectSegmentedControl.insertSegment(withTitle: "regular", at: 0, animated: false)
+        demoView.secondEffectSegmentedControl.insertSegment(withTitle: "prominent", at: 1, animated: false)
+        demoView.firstEffectSegmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
+        demoView.secondEffectSegmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
     }
 
     private func setupSliderView() {
@@ -74,23 +74,23 @@ class ViewController: UIViewController {
     private func updateSegmentedControls() {
         switch blurEffectStyle {
         case .some(.extraLight):
-            demoView.firstSegmentedControl.selectedSegmentIndex = 0
-            demoView.secondSegmentedControl.selectedSegmentIndex = UISegmentedControlNoSegment
+            demoView.firstEffectSegmentedControl.selectedSegmentIndex = 0
+            demoView.secondEffectSegmentedControl.selectedSegmentIndex = UISegmentedControlNoSegment
         case .some(.light):
-            demoView.firstSegmentedControl.selectedSegmentIndex = 1
-            demoView.secondSegmentedControl.selectedSegmentIndex = UISegmentedControlNoSegment
+            demoView.firstEffectSegmentedControl.selectedSegmentIndex = 1
+            demoView.secondEffectSegmentedControl.selectedSegmentIndex = UISegmentedControlNoSegment
         case .some(.dark):
-            demoView.firstSegmentedControl.selectedSegmentIndex = 2
-            demoView.secondSegmentedControl.selectedSegmentIndex = UISegmentedControlNoSegment
+            demoView.firstEffectSegmentedControl.selectedSegmentIndex = 2
+            demoView.secondEffectSegmentedControl.selectedSegmentIndex = UISegmentedControlNoSegment
         case .some(.regular):
-            demoView.firstSegmentedControl.selectedSegmentIndex = UISegmentedControlNoSegment
-            demoView.secondSegmentedControl.selectedSegmentIndex = 0
+            demoView.firstEffectSegmentedControl.selectedSegmentIndex = UISegmentedControlNoSegment
+            demoView.secondEffectSegmentedControl.selectedSegmentIndex = 0
         case .some(.prominent):
-            demoView.firstSegmentedControl.selectedSegmentIndex = UISegmentedControlNoSegment
-            demoView.secondSegmentedControl.selectedSegmentIndex = 1
+            demoView.firstEffectSegmentedControl.selectedSegmentIndex = UISegmentedControlNoSegment
+            demoView.secondEffectSegmentedControl.selectedSegmentIndex = 1
         default:
-            demoView.firstSegmentedControl.selectedSegmentIndex = UISegmentedControlNoSegment
-            demoView.secondSegmentedControl.selectedSegmentIndex = UISegmentedControlNoSegment
+            demoView.firstEffectSegmentedControl.selectedSegmentIndex = UISegmentedControlNoSegment
+            demoView.secondEffectSegmentedControl.selectedSegmentIndex = UISegmentedControlNoSegment
         }
     }
 
@@ -102,15 +102,15 @@ class ViewController: UIViewController {
 
     @objc func segmentedControlValueChanged(_ control: UISegmentedControl) {
         switch (control, control.selectedSegmentIndex) {
-        case (demoView.firstSegmentedControl, 0):
+        case (demoView.firstEffectSegmentedControl, 0):
             blurEffectStyle = .extraLight
-        case (demoView.firstSegmentedControl, 1):
+        case (demoView.firstEffectSegmentedControl, 1):
             blurEffectStyle = .light
-        case (demoView.firstSegmentedControl, 2):
+        case (demoView.firstEffectSegmentedControl, 2):
             blurEffectStyle = .dark
-        case (demoView.secondSegmentedControl, 0):
+        case (demoView.secondEffectSegmentedControl, 0):
             blurEffectStyle = .regular
-        case (demoView.secondSegmentedControl, 1):
+        case (demoView.secondEffectSegmentedControl, 1):
             blurEffectStyle = .prominent
         default:
             blurEffectStyle = nil

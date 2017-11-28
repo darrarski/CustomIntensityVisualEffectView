@@ -19,8 +19,8 @@ class View: UIView {
     let imageView = Subview.imageView
     let visualEffectView = Subview.visualEffectView
     let slider = Subview.slider
-    let firstSegmentedControl = Subview.firstSegmentedControl
-    let secondSegmentedControl = Subview.secondSegmentedControl
+    let firstEffectSegmentedControl = Subview.firstEffectSegmentedControl
+    let secondEffectSegmentedControl = Subview.secondEffectSegmentedControl
 
     private let containerView = UIView(frame: .zero)
 
@@ -28,8 +28,8 @@ class View: UIView {
         addSubview(containerView)
         containerView.addSubview(imageView)
         containerView.addSubview(visualEffectView)
-        addSubview(firstSegmentedControl)
-        addSubview(secondSegmentedControl)
+        addSubview(firstEffectSegmentedControl)
+        addSubview(secondEffectSegmentedControl)
         addSubview(slider)
     }
 
@@ -53,18 +53,18 @@ class View: UIView {
         visualEffectView.rightAnchor.constraint(equalTo: containerView.rightAnchor).isActive = true
         visualEffectView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
 
-        firstSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        firstSegmentedControl.topAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 32).isActive = true
-        firstSegmentedControl.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
-        firstSegmentedControl.rightAnchor.constraint(equalTo: rightAnchor, constant: -16).isActive = true
+        firstEffectSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        firstEffectSegmentedControl.topAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 32).isActive = true
+        firstEffectSegmentedControl.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
+        firstEffectSegmentedControl.rightAnchor.constraint(equalTo: rightAnchor, constant: -16).isActive = true
 
-        secondSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        secondSegmentedControl.topAnchor.constraint(equalTo: firstSegmentedControl.bottomAnchor, constant: 0).isActive = true
-        secondSegmentedControl.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
-        secondSegmentedControl.rightAnchor.constraint(equalTo: rightAnchor, constant: -16).isActive = true
+        secondEffectSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        secondEffectSegmentedControl.topAnchor.constraint(equalTo: firstEffectSegmentedControl.bottomAnchor, constant: 0).isActive = true
+        secondEffectSegmentedControl.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
+        secondEffectSegmentedControl.rightAnchor.constraint(equalTo: rightAnchor, constant: -16).isActive = true
 
         slider.translatesAutoresizingMaskIntoConstraints = false
-        slider.topAnchor.constraint(equalTo: secondSegmentedControl.bottomAnchor, constant: 16).isActive = true
+        slider.topAnchor.constraint(equalTo: secondEffectSegmentedControl.bottomAnchor, constant: 16).isActive = true
         slider.leftAnchor.constraint(equalTo: leftAnchor, constant: 32).isActive = true
         slider.rightAnchor.constraint(equalTo: rightAnchor, constant: -32).isActive = true
         slider.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -32).isActive = true
@@ -84,11 +84,11 @@ private extension View {
             return CustomIntensityVisualEffectView(effect: nil, intensity: 1)
         }
 
-        static var firstSegmentedControl: UISegmentedControl {
+        static var firstEffectSegmentedControl: UISegmentedControl {
             return UISegmentedControl(items: [])
         }
 
-        static var secondSegmentedControl: UISegmentedControl {
+        static var secondEffectSegmentedControl: UISegmentedControl {
             return UISegmentedControl(items: [])
         }
 
