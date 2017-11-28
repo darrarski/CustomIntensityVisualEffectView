@@ -29,6 +29,16 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "313E37491FCDDD7000F22C10"
+               BuildableName = "CustomIntensityVisualEffectViewTests.xctest"
+               BlueprintName = "CustomIntensityVisualEffectViewTests"
+               ReferencedContainer = "container:CustomIntensityVisualEffectView.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

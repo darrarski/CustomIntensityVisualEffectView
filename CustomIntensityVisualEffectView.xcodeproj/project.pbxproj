@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		313E374D1FCDDD7000F22C10 /* CustomIntensityVisualEffectViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313E374C1FCDDD7000F22C10 /* CustomIntensityVisualEffectViewTests.swift */; };
 		319670231FCCC4CC007F21D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319670221FCCC4CC007F21D2 /* AppDelegate.swift */; };
 		319670251FCCC4CC007F21D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319670241FCCC4CC007F21D2 /* ViewController.swift */; };
 		3196702A1FCCC4CC007F21D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 319670291FCCC4CC007F21D2 /* Assets.xcassets */; };
@@ -19,6 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		313E374F1FCDDD7000F22C10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 319670171FCCC4CC007F21D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3196701E1FCCC4CC007F21D2;
+			remoteInfo = CustomIntensityVisualEffectViewDemoApp;
+		};
 		31AF4FF51FCCC990005583A2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 319670171FCCC4CC007F21D2 /* Project object */;
@@ -43,6 +51,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		313E374A1FCDDD7000F22C10 /* CustomIntensityVisualEffectViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomIntensityVisualEffectViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		313E374C1FCDDD7000F22C10 /* CustomIntensityVisualEffectViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIntensityVisualEffectViewTests.swift; sourceTree = "<group>"; };
+		313E374E1FCDDD7000F22C10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3196701F1FCCC4CC007F21D2 /* CustomIntensityVisualEffectViewDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomIntensityVisualEffectViewDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		319670221FCCC4CC007F21D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		319670241FCCC4CC007F21D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +68,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		313E37471FCDDD7000F22C10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3196701C1FCCC4CC007F21D2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -75,12 +93,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		313E374B1FCDDD7000F22C10 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				313E374C1FCDDD7000F22C10 /* CustomIntensityVisualEffectViewTests.swift */,
+				313E374E1FCDDD7000F22C10 /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		319670161FCCC4CC007F21D2 = {
 			isa = PBXGroup;
 			children = (
 				319670211FCCC4CC007F21D2 /* DemoApp */,
 				319670201FCCC4CC007F21D2 /* Products */,
 				31AF4FF11FCCC98F005583A2 /* Sources */,
+				313E374B1FCDDD7000F22C10 /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +117,7 @@
 			children = (
 				3196701F1FCCC4CC007F21D2 /* CustomIntensityVisualEffectViewDemoApp.app */,
 				31AF4FF01FCCC98F005583A2 /* CustomIntensityVisualEffectView.framework */,
+				313E374A1FCDDD7000F22C10 /* CustomIntensityVisualEffectViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,6 +159,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		313E37491FCDDD7000F22C10 /* CustomIntensityVisualEffectViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 313E37531FCDDD7000F22C10 /* Build configuration list for PBXNativeTarget "CustomIntensityVisualEffectViewTests" */;
+			buildPhases = (
+				313E37461FCDDD7000F22C10 /* Sources */,
+				313E37471FCDDD7000F22C10 /* Frameworks */,
+				313E37481FCDDD7000F22C10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				313E37501FCDDD7000F22C10 /* PBXTargetDependency */,
+			);
+			name = CustomIntensityVisualEffectViewTests;
+			productName = CustomIntensityVisualEffectViewTests;
+			productReference = 313E374A1FCDDD7000F22C10 /* CustomIntensityVisualEffectViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3196701E1FCCC4CC007F21D2 /* CustomIntensityVisualEffectViewDemoApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 319670311FCCC4CC007F21D2 /* Build configuration list for PBXNativeTarget "CustomIntensityVisualEffectViewDemoApp" */;
@@ -177,6 +224,11 @@
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Dariusz Rybicki";
 				TargetAttributes = {
+					313E37491FCDDD7000F22C10 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3196701E1FCCC4CC007F21D2;
+					};
 					3196701E1FCCC4CC007F21D2 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Manual;
@@ -203,11 +255,19 @@
 			targets = (
 				3196701E1FCCC4CC007F21D2 /* CustomIntensityVisualEffectViewDemoApp */,
 				31AF4FEF1FCCC98F005583A2 /* CustomIntensityVisualEffectView */,
+				313E37491FCDDD7000F22C10 /* CustomIntensityVisualEffectViewTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		313E37481FCDDD7000F22C10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3196701D1FCCC4CC007F21D2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -227,6 +287,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		313E37461FCDDD7000F22C10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				313E374D1FCDDD7000F22C10 /* CustomIntensityVisualEffectViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3196701B1FCCC4CC007F21D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -248,6 +316,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		313E37501FCDDD7000F22C10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3196701E1FCCC4CC007F21D2 /* CustomIntensityVisualEffectViewDemoApp */;
+			targetProxy = 313E374F1FCDDD7000F22C10 /* PBXContainerItemProxy */;
+		};
 		31AF4FF61FCCC990005583A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 31AF4FEF1FCCC98F005583A2 /* CustomIntensityVisualEffectView */;
@@ -267,6 +340,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		313E37511FCDDD7000F22C10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pl.darrarski.CustomIntensityVisualEffectViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CustomIntensityVisualEffectViewDemoApp.app/CustomIntensityVisualEffectViewDemoApp";
+			};
+			name = Debug;
+		};
+		313E37521FCDDD7000F22C10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pl.darrarski.CustomIntensityVisualEffectViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CustomIntensityVisualEffectViewDemoApp.app/CustomIntensityVisualEffectViewDemoApp";
+			};
+			name = Release;
+		};
 		3196702F1FCCC4CC007F21D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -462,6 +565,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		313E37531FCDDD7000F22C10 /* Build configuration list for PBXNativeTarget "CustomIntensityVisualEffectViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				313E37511FCDDD7000F22C10 /* Debug */,
+				313E37521FCDDD7000F22C10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3196701A1FCCC4CC007F21D2 /* Build configuration list for PBXProject "CustomIntensityVisualEffectView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
