@@ -79,6 +79,9 @@ class ViewController: UIViewController {
             .paragraphStyle: paragraphStyle
         ]))
         demoView.textLabel.attributedText = text
+        demoView.contentLabel.text = "Content style:"
+        demoView.effectLabel.text = "Blur effect style:"
+        demoView.sliderLabel.text = "Effect intensity:"
     }
 
     private func setupSegmentedControls() {
