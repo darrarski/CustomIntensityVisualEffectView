@@ -15,6 +15,13 @@ class ViewController: UIViewController {
         return nil
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        switch contentStyle {
+        case .light: return .default
+        case .dark: return .lightContent
+        }
+    }
+
     // MARK: View
 
     override func loadView() {
@@ -39,6 +46,7 @@ class ViewController: UIViewController {
 
     private var contentStyle: ContentStyle = .light {
         didSet {
+            setNeedsStatusBarAppearanceUpdate()
             updateContentSegmentedControl()
             updateContent()
         }
