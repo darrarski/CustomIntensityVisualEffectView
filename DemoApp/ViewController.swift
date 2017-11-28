@@ -53,7 +53,7 @@ class ViewController: UIViewController {
         }
     }
 
-    private var blurEffectStyle: UIBlurEffectStyle? {
+    private var blurEffectStyle: UIBlurEffectStyle? = .extraLight {
         didSet {
             updateEffectSegmentedControls()
             updateVisualEffect()
