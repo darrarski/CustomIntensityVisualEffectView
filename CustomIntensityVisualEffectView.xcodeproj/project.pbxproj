@@ -93,22 +93,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		313E374B1FCDDD7000F22C10 /* Tests */ = {
+		313E374B1FCDDD7000F22C10 /* CustomIntensityVisualEffectViewTests */ = {
 			isa = PBXGroup;
 			children = (
 				313E374C1FCDDD7000F22C10 /* CustomIntensityVisualEffectViewTests.swift */,
 				313E374E1FCDDD7000F22C10 /* Info.plist */,
 			);
+			name = CustomIntensityVisualEffectViewTests;
 			path = Tests;
 			sourceTree = "<group>";
 		};
 		319670161FCCC4CC007F21D2 = {
 			isa = PBXGroup;
 			children = (
+				313E374B1FCDDD7000F22C10 /* CustomIntensityVisualEffectViewTests */,
 				319670211FCCC4CC007F21D2 /* DemoApp */,
 				319670201FCCC4CC007F21D2 /* Products */,
 				31AF4FF11FCCC98F005583A2 /* Sources */,
-				313E374B1FCDDD7000F22C10 /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
