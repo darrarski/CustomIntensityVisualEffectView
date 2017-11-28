@@ -18,6 +18,7 @@ class View: UIView {
 
     let contentView = UIView(frame: .zero)
     let imageView = Subview.imageView
+    let textLabel = Subview.textLabel
     let visualEffectView = Subview.visualEffectView
     let slider = Subview.slider
     let contentSegmentedControl = UISegmentedControl(items: [])
@@ -26,6 +27,7 @@ class View: UIView {
 
     private func addSubviews() {
         addSubview(contentView)
+        contentView.addSubview(textLabel)
         contentView.addSubview(imageView)
         contentView.addSubview(visualEffectView)
         addSubview(contentSegmentedControl)
@@ -43,10 +45,16 @@ class View: UIView {
         contentView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
 
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 0.67).isActive = true
+        imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 32).isActive = true
         imageView.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
         imageView.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
-        imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+
+        textLabel.translatesAutoresizingMaskIntoConstraints = false
+        textLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16).isActive = true
+        textLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true
+        textLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
+        textLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -16).isActive = true
 
         visualEffectView.translatesAutoresizingMaskIntoConstraints = false
         visualEffectView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
@@ -80,6 +88,12 @@ class View: UIView {
 
 private extension View {
     struct Subview {
+        static var textLabel: UILabel {
+            let label = UILabel(frame: .zero)
+            label.numberOfLines = 0
+            return label
+        }
+
         static var imageView: UIImageView {
             let view = UIImageView(image: #imageLiteral(resourceName: "antrykot"))
             view.contentMode = .scaleAspectFit
