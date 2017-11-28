@@ -16,18 +16,19 @@ class View: UIView {
 
     // MARK: Subviews
 
+    let contentView = UIView(frame: .zero)
     let imageView = Subview.imageView
     let visualEffectView = Subview.visualEffectView
     let slider = Subview.slider
-    let firstEffectSegmentedControl = Subview.firstEffectSegmentedControl
-    let secondEffectSegmentedControl = Subview.secondEffectSegmentedControl
-
-    private let containerView = UIView(frame: .zero)
+    let contentSegmentedControl = UISegmentedControl(items: [])
+    let firstEffectSegmentedControl = UISegmentedControl(items: [])
+    let secondEffectSegmentedControl = UISegmentedControl(items: [])
 
     private func addSubviews() {
-        addSubview(containerView)
-        containerView.addSubview(imageView)
-        containerView.addSubview(visualEffectView)
+        addSubview(contentView)
+        contentView.addSubview(imageView)
+        contentView.addSubview(visualEffectView)
+        addSubview(contentSegmentedControl)
         addSubview(firstEffectSegmentedControl)
         addSubview(secondEffectSegmentedControl)
         addSubview(slider)
@@ -36,25 +37,30 @@ class View: UIView {
     // MARK: Layout
 
     private func setupLayout() {
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        containerView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        containerView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        containerView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        contentView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        contentView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
 
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
-        imageView.leftAnchor.constraint(equalTo: containerView.leftAnchor).isActive = true
-        imageView.rightAnchor.constraint(equalTo: containerView.rightAnchor).isActive = true
-        imageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
+        imageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        imageView.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
+        imageView.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
+        imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
 
         visualEffectView.translatesAutoresizingMaskIntoConstraints = false
-        visualEffectView.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
-        visualEffectView.leftAnchor.constraint(equalTo: containerView.leftAnchor).isActive = true
-        visualEffectView.rightAnchor.constraint(equalTo: containerView.rightAnchor).isActive = true
-        visualEffectView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
+        visualEffectView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        visualEffectView.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
+        visualEffectView.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
+        visualEffectView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+
+        contentSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        contentSegmentedControl.topAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 32).isActive = true
+        contentSegmentedControl.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
+        contentSegmentedControl.rightAnchor.constraint(equalTo: rightAnchor, constant: -16).isActive = true
 
         firstEffectSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        firstEffectSegmentedControl.topAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 32).isActive = true
+        firstEffectSegmentedControl.topAnchor.constraint(equalTo: contentSegmentedControl.bottomAnchor, constant: 16).isActive = true
         firstEffectSegmentedControl.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
         firstEffectSegmentedControl.rightAnchor.constraint(equalTo: rightAnchor, constant: -16).isActive = true
 
@@ -82,14 +88,6 @@ private extension View {
 
         static var visualEffectView: CustomIntensityVisualEffectView {
             return CustomIntensityVisualEffectView(effect: nil, intensity: 1)
-        }
-
-        static var firstEffectSegmentedControl: UISegmentedControl {
-            return UISegmentedControl(items: [])
-        }
-
-        static var secondEffectSegmentedControl: UISegmentedControl {
-            return UISegmentedControl(items: [])
         }
 
         static var slider: UISlider {
