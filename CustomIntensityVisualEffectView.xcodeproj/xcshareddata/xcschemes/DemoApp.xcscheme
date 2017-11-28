@@ -27,7 +27,7 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       language = ""
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "NO">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -51,6 +51,13 @@
       </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = 'DYLD_INSERT_LIBRARIES'
+            value = '@executable_path/EarlGrey.framework/EarlGrey'
+            isEnabled = 'YES'>
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
