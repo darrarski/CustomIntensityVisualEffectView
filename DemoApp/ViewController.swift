@@ -34,6 +34,7 @@ class ViewController: UIViewController {
         setupSegmentedControls()
         setupSliderView()
         updateContent()
+        updateSliderLabel()
         updateVisualEffect()
         updateContentSegmentedControl()
         updateEffectSegmentedControls()
@@ -61,6 +62,7 @@ class ViewController: UIViewController {
 
     private var effectIntensity: CGFloat = 0 {
         didSet {
+            updateSliderLabel()
             updateSlider()
             updateVisualEffect()
         }
@@ -81,7 +83,6 @@ class ViewController: UIViewController {
         demoView.textLabel.attributedText = text
         demoView.contentLabel.text = "Content style:"
         demoView.effectLabel.text = "Blur effect style:"
-        demoView.sliderLabel.text = "Effect intensity:"
     }
 
     private func setupSegmentedControls() {
@@ -111,6 +112,15 @@ class ViewController: UIViewController {
             demoView.contentView.backgroundColor = .black
             demoView.textLabel.textColor = .white
         }
+    }
+
+    private func updateSliderLabel() {
+        let formatter = NumberFormatter()
+        formatter.minimumIntegerDigits = 1
+        formatter.minimumFractionDigits = 3
+        formatter.maximumFractionDigits = 3
+        let value = formatter.string(from: NSNumber(value: Float(effectIntensity))) ?? ""
+        demoView.sliderLabel.text = "Effect intensity: \(value)"
     }
 
     private func updateVisualEffect() {
