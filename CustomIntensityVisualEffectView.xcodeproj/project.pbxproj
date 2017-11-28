@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		313E374D1FCDDD7000F22C10 /* CustomIntensityVisualEffectViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313E374C1FCDDD7000F22C10 /* CustomIntensityVisualEffectViewTests.swift */; };
+		314ABEE91FCDE65900CFB2AA /* CustomIntensityVisualEffectViewTestsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314ABEE81FCDE65900CFB2AA /* CustomIntensityVisualEffectViewTestsSpec.swift */; };
 		319670231FCCC4CC007F21D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319670221FCCC4CC007F21D2 /* AppDelegate.swift */; };
 		319670251FCCC4CC007F21D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319670241FCCC4CC007F21D2 /* ViewController.swift */; };
 		3196702A1FCCC4CC007F21D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 319670291FCCC4CC007F21D2 /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 		313E374A1FCDDD7000F22C10 /* CustomIntensityVisualEffectViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomIntensityVisualEffectViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		313E374C1FCDDD7000F22C10 /* CustomIntensityVisualEffectViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIntensityVisualEffectViewTests.swift; sourceTree = "<group>"; };
 		313E374E1FCDDD7000F22C10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		314ABEE81FCDE65900CFB2AA /* CustomIntensityVisualEffectViewTestsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIntensityVisualEffectViewTestsSpec.swift; sourceTree = "<group>"; };
 		3196701F1FCCC4CC007F21D2 /* CustomIntensityVisualEffectViewDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomIntensityVisualEffectViewDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		319670221FCCC4CC007F21D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		319670241FCCC4CC007F21D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				313E374C1FCDDD7000F22C10 /* CustomIntensityVisualEffectViewTests.swift */,
+				314ABEE81FCDE65900CFB2AA /* CustomIntensityVisualEffectViewTestsSpec.swift */,
 				1E8089D8DAB111BB17A1B950 /* EarlGrey.swift */,
 				313E374E1FCDDD7000F22C10 /* Info.plist */,
 			);
@@ -402,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				313E374D1FCDDD7000F22C10 /* CustomIntensityVisualEffectViewTests.swift in Sources */,
+				314ABEE91FCDE65900CFB2AA /* CustomIntensityVisualEffectViewTestsSpec.swift in Sources */,
 				A85ED5D359F84053F0275F09 /* EarlGrey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
