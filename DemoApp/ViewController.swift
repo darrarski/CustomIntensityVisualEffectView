@@ -2,6 +2,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    enum ContentStyle {
+        case light
+        case dark
+    }
+
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -20,18 +25,27 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupSegmentedControls()
         setupSliderView()
-        updateSegmentedControls()
-        updateSlider()
+        updateContent()
         updateVisualEffect()
+        updateContentSegmentedControl()
+        updateEffectSegmentedControls()
+        updateSlider()
     }
 
     private var demoView: View! {
         return view as? View
     }
 
+    private var contentStyle: ContentStyle = .light {
+        didSet {
+            updateContentSegmentedControl()
+            updateContent()
+        }
+    }
+
     private var blurEffectStyle: UIBlurEffectStyle? = .dark {
         didSet {
-            updateSegmentedControls()
+            updateEffectSegmentedControls()
             updateVisualEffect()
         }
     }
@@ -44,11 +58,14 @@ class ViewController: UIViewController {
     }
 
     private func setupSegmentedControls() {
+        demoView.contentSegmentedControl.insertSegment(withTitle: "light content", at: 0, animated: false)
+        demoView.contentSegmentedControl.insertSegment(withTitle: "dark content", at: 1, animated: false)
         demoView.firstEffectSegmentedControl.insertSegment(withTitle: "extra light", at: 0, animated: false)
         demoView.firstEffectSegmentedControl.insertSegment(withTitle: "light", at: 1, animated: false)
         demoView.firstEffectSegmentedControl.insertSegment(withTitle: "dark", at: 2, animated: false)
         demoView.secondEffectSegmentedControl.insertSegment(withTitle: "regular", at: 0, animated: false)
         demoView.secondEffectSegmentedControl.insertSegment(withTitle: "prominent", at: 1, animated: false)
+        demoView.contentSegmentedControl.addTarget(self, action: #selector(contentSegmentedControlValueChanged(_:)), for: .valueChanged)
         demoView.firstEffectSegmentedControl.addTarget(self, action: #selector(effectSegmentedControlValueChanged), for: .valueChanged)
         demoView.secondEffectSegmentedControl.addTarget(self, action: #selector(effectSegmentedControlValueChanged), for: .valueChanged)
     }
@@ -56,6 +73,15 @@ class ViewController: UIViewController {
     private func setupSliderView() {
         demoView.slider.value = Float(demoView.visualEffectView.intensity)
         demoView.slider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+    }
+
+    private func updateContent() {
+        switch contentStyle {
+        case .light:
+            demoView.contentView.backgroundColor = .white
+        case .dark:
+            demoView.contentView.backgroundColor = .black
+        }
     }
 
     private func updateVisualEffect() {
@@ -71,7 +97,14 @@ class ViewController: UIViewController {
         demoView.slider.value = Float(effectIntensity)
     }
 
-    private func updateSegmentedControls() {
+    private func updateContentSegmentedControl() {
+        switch contentStyle {
+        case .light: demoView.contentSegmentedControl.selectedSegmentIndex = 0
+        case .dark: demoView.contentSegmentedControl.selectedSegmentIndex = 1
+        }
+    }
+
+    private func updateEffectSegmentedControls() {
         switch blurEffectStyle {
         case .some(.extraLight):
             demoView.firstEffectSegmentedControl.selectedSegmentIndex = 0
@@ -98,6 +131,14 @@ class ViewController: UIViewController {
 
     @objc func sliderValueChanged(_ slider: UISlider) {
         effectIntensity = CGFloat(slider.value)
+    }
+
+    @objc func contentSegmentedControlValueChanged(_ control: UISegmentedControl) {
+        switch control.selectedSegmentIndex {
+        case 0: contentStyle = .light
+        case 1: contentStyle = .dark
+        default: break
+        }
     }
 
     @objc func effectSegmentedControlValueChanged(_ control: UISegmentedControl) {
