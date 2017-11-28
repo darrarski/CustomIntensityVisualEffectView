@@ -55,6 +55,7 @@ class View: UIView {
         textLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true
         textLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
         textLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -16).isActive = true
+        textLabel.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
 
         visualEffectView.translatesAutoresizingMaskIntoConstraints = false
         visualEffectView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
